@@ -49,6 +49,9 @@ class Visualizer : MonoBehaviour
             {
                 if (i == _markers.Length) break;
                 _markers[i++].SetAttributes(d);
+                _markers[i++].rayDetection(d);
+            
+                //Debug.Log(d);
             }
 
             for (; i < _markers.Length; i++) _markers[i].Hide();

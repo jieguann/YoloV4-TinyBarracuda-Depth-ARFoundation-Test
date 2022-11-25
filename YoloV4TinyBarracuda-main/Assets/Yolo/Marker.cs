@@ -52,8 +52,30 @@ sealed class Marker : MonoBehaviour
 
         // Enable
         gameObject.SetActive(true);
+
+        
     }
 
     public void Hide()
       => gameObject.SetActive(false);
+
+
+    public void rayDetection(in Detection d)
+    {
+        var rect = _parent.rect;
+        var point = Camera.main.ScreenToWorldPoint(new Vector3(d.x * rect.width, (1 - d.y) * rect.height, Camera.main.transform.position.z));
+        //Ray ray = new Ray(point, Camera.main.transform.forward);
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(d.x * rect.width * rect.height, d.y, 0));
+        //RaycastHit hitData;
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log(hit.distance);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * hit.distance, Color.green);
+            Debug.Log(d.x);
+            // The Ray hit something less than 10 Units away,
+            // It was on the a certain Layer
+            // But it wasn't a Trigger Collider
+        }
+    }
 }

@@ -5,15 +5,13 @@ using UnityEngine.Networking;
 using UnityEngine.Video;
 public class getImage : MonoBehaviour
 {
-    #region Public property
+    
 
     public Texture Texture => OutputBuffer;
 
-    #endregion
+    
 
-    #region Editable attributes
-
-    // Source type options
+    
     public enum SourceType { Texture, Video, Webcam, Card, Gradient, ARFoundation }
     public CpuImageSample cpuImage;
 
@@ -36,16 +34,15 @@ public class getImage : MonoBehaviour
     [SerializeField] RenderTexture _outputTexture = null;
     [SerializeField] Vector2Int _outputResolution = new Vector2Int(1920, 1080);
 
-    #endregion
+   
 
-    #region Package asset reference
+   
 
     [SerializeField, HideInInspector] Shader _shader = null;
 
-    #endregion
+    
 
-    #region Private members
-
+    
     UnityWebRequest _webTexture;
     WebCamTexture _webcam;
     Material _material;
@@ -69,9 +66,9 @@ public class getImage : MonoBehaviour
         Graphics.Blit(source, OutputBuffer, scale, offset);
     }
 
-    #endregion
+   
 
-    #region MonoBehaviour implementation
+   
 
     void Start()
     {
@@ -167,6 +164,6 @@ public class getImage : MonoBehaviour
             Graphics.Blit(null, OutputBuffer, _material, 1);
     }
 
-    #endregion
+   
 }
 
