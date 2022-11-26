@@ -5,30 +5,35 @@ using YoloV4Tiny;
 
 class Visualizer : MonoBehaviour
 {
-    #region Editable attributes
+    
 
     [SerializeField] getImage _source = null;
+    public CpuImageSample cpuImage = null;
     [SerializeField, Range(0, 1)] float _threshold = 0.5f;
     [SerializeField] ResourceSet _resources = null;
     [SerializeField] RawImage _preview = null;
     [SerializeField] Marker _markerPrefab = null;
+    [SerializeField] DepthMarker _3dMarkerPrefab = null;
 
-    #endregion
+    
 
-    #region Internal objects
+    
 
     ObjectDetector _detector;
     Marker[] _markers = new Marker[50];
+    DepthMarker[] _3dMarker = new DepthMarker[50];
 
-    #endregion
+    
 
-    #region MonoBehaviour implementation
+    
 
     void Start()
     {
         _detector = new ObjectDetector(_resources);
         for (var i = 0; i < _markers.Length; i++)
             _markers[i] = Instantiate(_markerPrefab, _preview.transform);
+        for (var i = 0; i < _3dMarker.Length; i++)
+            _3dMarker[i] = Instantiate(_3dMarkerPrefab);
     }
 
     void OnDisable()
@@ -49,7 +54,8 @@ class Visualizer : MonoBehaviour
             {
                 if (i == _markers.Length) break;
                 _markers[i++].SetAttributes(d);
-                _markers[i++].rayDetection(d);
+                _3dMarker[i++].setDepth(d, cpuImage.depthTexture);
+                
             
                 //Debug.Log(d);
             }
@@ -61,5 +67,5 @@ class Visualizer : MonoBehaviour
            
     
 
-    #endregion
+    
 }
