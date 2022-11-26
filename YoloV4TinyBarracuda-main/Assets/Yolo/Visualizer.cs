@@ -42,6 +42,7 @@ class Visualizer : MonoBehaviour
     void OnDestroy()
     {
         for (var i = 0; i < _markers.Length; i++) Destroy(_markers[i]);
+        for (var i = 0; i < _3dMarker.Length; i++) Destroy(_3dMarker[i]);
     }
 
     void Update()
@@ -61,6 +62,7 @@ class Visualizer : MonoBehaviour
             }
 
             for (; i < _markers.Length; i++) _markers[i].Hide();
+            for (; i < _3dMarker.Length; i++) _3dMarker[i].Hide();
 
             _preview.texture = _source.Texture;
         }

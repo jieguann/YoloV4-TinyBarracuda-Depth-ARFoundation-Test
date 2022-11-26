@@ -32,6 +32,7 @@ public class DepthMarker : MonoBehaviour
 
             }
         }
+        gameObject.SetActive(true);
     }
 
     public void Hide()
