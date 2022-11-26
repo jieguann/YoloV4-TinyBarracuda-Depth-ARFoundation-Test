@@ -33,7 +33,7 @@ class Visualizer : MonoBehaviour
         for (var i = 0; i < _markers.Length; i++)
             _markers[i] = Instantiate(_markerPrefab, _preview.transform);
         for (var i = 0; i < _3dMarker.Length; i++)
-            _3dMarker[i] = Instantiate(_3dMarkerPrefab);
+            _3dMarker[i] = Instantiate(_3dMarkerPrefab, Camera.main.transform);
     }
 
     void OnDisable()
