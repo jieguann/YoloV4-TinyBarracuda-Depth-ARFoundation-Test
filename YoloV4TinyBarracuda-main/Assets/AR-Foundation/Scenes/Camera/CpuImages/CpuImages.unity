@@ -2678,6 +2678,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CameraManager: {fileID: 1553155030}
+  cameraTexture: {fileID: 0}
+  depthTexture: {fileID: 0}
+  depthTextureRawImage: {fileID: 613839500}
   m_RawCameraImage: {fileID: 1474869893}
   m_OcclusionManager: {fileID: 532431571}
   m_RawHumanDepthImage: {fileID: 1218579281}

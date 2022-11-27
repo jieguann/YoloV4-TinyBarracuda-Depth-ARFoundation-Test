@@ -28,7 +28,7 @@ public class DepthMarker : MonoBehaviour
                 var depthIndex = x * (y - 1) + x;
                 depth = depthPixels[depthIndex].r;
 
-                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(d.x*Screen.width, (1 - d.y) * Screen.height, Camera.main.nearClipPlane));
+                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(d.x*Screen.width, (1 - d.y) * Screen.height, depth));
                 //transform.position = new Vector3(d.x, (1 - d.y), depth);
 
             }
