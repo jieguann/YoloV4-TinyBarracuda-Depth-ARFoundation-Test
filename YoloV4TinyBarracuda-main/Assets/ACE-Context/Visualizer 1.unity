@@ -828,10 +828,10 @@ MonoBehaviour:
   m_TrackingStateAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 7d87e92c-7eef-4e01-b09f-a0826b2fdadd
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -860,10 +860,10 @@ MonoBehaviour:
   m_SelectActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Select Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: d2b4a34c-6fcb-4c39-8830-9535eea61b0c
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -884,10 +884,10 @@ MonoBehaviour:
   m_ActivateActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Activate Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: df044a6c-2dca-4bd5-b624-18872395cbe5
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -924,10 +924,10 @@ MonoBehaviour:
   m_UIPressActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Press Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 18cb11c4-4e4c-445c-8faa-ea5a9065c518
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -960,10 +960,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 4952322d-4d92-4349-be4e-f3169f5a2366
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1078,7 +1078,7 @@ RectTransform:
   m_GameObject: {fileID: 541873280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.577149, y: 5.577149, z: 5.577149}
+  m_LocalScale: {x: 2.8660412, y: 2.8660412, z: 2.8660412}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1537321182}
@@ -1086,7 +1086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -283}
+  m_AnchoredPosition: {x: 0, y: -1008}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &554839232
@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.21960784}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.41960785}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3890,10 +3890,10 @@ MonoBehaviour:
   m_TrackingStateAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 1f7dcc1f-d66a-4c6a-ad18-951e1864b749
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3922,10 +3922,10 @@ MonoBehaviour:
   m_SelectActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Select Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 628c5cf3-a35a-46da-a2a5-6439d9af3589
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3946,10 +3946,10 @@ MonoBehaviour:
   m_ActivateActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Activate Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 067e87d1-68fa-4649-9cf3-1f01d6396fee
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -4002,10 +4002,10 @@ MonoBehaviour:
   m_UIPressActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Press Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 19f5ade4-603d-4faf-92a5-a5c7d153716f
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -4038,10 +4038,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 43414e03-5ad0-4635-84e5-70503e9168b1
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
