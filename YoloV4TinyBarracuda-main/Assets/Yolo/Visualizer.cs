@@ -61,8 +61,12 @@ class Visualizer : MonoBehaviour
                 //Debug.Log(d);
             }
 
-            for (; i < _markers.Length; i++) _markers[i].Hide();
-            for (; i < _3dMarker.Length; i++) _3dMarker[i].Hide();
+            for (; i < _markers.Length; i++)
+        {
+            _markers[i].Hide();
+            _3dMarker[i].Hide();
+        }
+        
 
             _preview.texture = _source.Texture;
         }
