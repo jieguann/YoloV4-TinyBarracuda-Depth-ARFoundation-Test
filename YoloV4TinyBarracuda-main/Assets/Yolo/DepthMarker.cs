@@ -24,11 +24,12 @@ public class DepthMarker : MonoBehaviour
             for (int depth_x = 0; depth_x < width_depth; depth_x++, index_dst++)
             {
                 var x = (int)(d.x * width_depth);
-                var y = (int)(d.y * height_depth);
+                var y = (int)((1 - d.y) * height_depth);
                 var depthIndex = x * (y - 1) + x;
                 depth = depthPixels[depthIndex].r;
 
-                transform.position = new Vector3(d.x, d.y, depth);
+                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(d.x*Screen.width, (1 - d.y) * Screen.height, Camera.main.nearClipPlane));
+                //transform.position = new Vector3(d.x, (1 - d.y), depth);
 
             }
         }
