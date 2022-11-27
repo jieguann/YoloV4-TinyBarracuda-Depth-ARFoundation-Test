@@ -1536,11 +1536,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdf12b5712e449fa89432d5cc5df094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpuImage: {fileID: 0}
-  depthValue: 100
-  depthRange: 0.7
-  width_depth: 0
-  height_depth: 0
+  image: {fileID: 165585584}
+  depthByte: 
+  colorByte: 
+  humanByte: 
+  depthImage: {fileID: 0}
+  colorImage: {fileID: 0}
+  humanImage: {fileID: 0}
+  depthImagePixelWidth: 0
+  depthImagePixelHeight: 0
+  depthSlider: {fileID: 317049919}
 --- !u!4 &1684656839
 Transform:
   m_ObjectHideFlags: 0
