@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using Klak.TestTools;
 using YoloV4Tiny;
 
-class Visualizer : MonoBehaviour
+class VisualizerYolo : MonoBehaviour
 {
     
 
