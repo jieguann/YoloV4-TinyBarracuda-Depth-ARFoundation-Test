@@ -20,8 +20,8 @@ class Visualizer : MonoBehaviour
     
 
     ObjectDetector _detector;
-    Marker[] _markers = new Marker[50];
-    DepthMarker[] _3dMarker = new DepthMarker[50];
+    Marker[] _markers = new Marker[10];
+    DepthMarker[] _3dMarker = new DepthMarker[10];
 
     
 
