@@ -10,6 +10,7 @@ public class getDepth : MonoBehaviour
     //Setup byte and texture2d
     public byte[] depthByte,colorByte,humanByte;
     public Texture2D depthImage, colorImage, humanImage;
+    public Texture colorImageTexture;
 
     public int depthImagePixelWidth;
     public int depthImagePixelHeight;
@@ -34,6 +35,7 @@ public class getDepth : MonoBehaviour
 
         //depthImage = image.m_DepthTextureFloat;
         depthImage = image.m_DepthTextureBGRA;
+        //depthImage = rotateTexture(depthImage);
         //rawImage.texture = depthImage;
         //depthByte = depthImage.EncodeToJPG();
         depthImagePixelWidth = (int)depthSlider.value;
@@ -48,7 +50,8 @@ public class getDepth : MonoBehaviour
         }
         */
         colorImage = image.m_CameraTexture;
-        
+        //colorImage = rotateTexture(colorImage);
+        colorImageTexture = colorImage as Texture;
         //colorByte = colorImage.EncodeToJPG();
         colorByte = Resize(colorImage, 50, 25).EncodeToJPG();
 
@@ -80,5 +83,38 @@ public class getDepth : MonoBehaviour
         result.ReadPixels(new Rect(0,0,targetX,targetY),0,0);
         result.Apply();
         return result;
+    }
+
+
+    public Texture2D rotateTexture(Texture2D image)
+    {
+
+        Texture2D target = new Texture2D(image.height, image.width, image.format, false);    //flip image width<>height, as we rotated the image, it might be a rect. not a square image
+
+        Color32[] pixels = image.GetPixels32(0);
+        pixels = rotateTextureGrid(pixels, image.width, image.height);
+        target.SetPixels32(pixels);
+        target.Apply();
+
+        //flip image width<>height, as we rotated the image, it might be a rect. not a square image
+
+        return target;
+    }
+
+
+    public Color32[] rotateTextureGrid(Color32[] tex, int wid, int hi)
+    {
+        Color32[] ret = new Color32[wid * hi];      //reminder we are flipping these in the target
+
+        for (int y = 0; y < hi; y++)
+        {
+            for (int x = 0; x < wid; x++)
+            {
+                ret[(hi - 1) - y + x * hi] = tex[x + y * wid];         //juggle the pixels around
+
+            }
+        }
+
+        return ret;
     }
 }

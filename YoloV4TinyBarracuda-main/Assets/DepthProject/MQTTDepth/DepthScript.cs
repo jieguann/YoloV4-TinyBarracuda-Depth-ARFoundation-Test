@@ -94,7 +94,7 @@ public class DepthScript : MonoBehaviour
 
             // Apply the updated texture data to our texture
             m_CameraTexture.Apply();
-
+            m_CameraTexture = rotateTexture(m_CameraTexture,true);
             // Set the RawImage's texture so we can visualize it.
             m_cameraView.texture = m_CameraTexture;
         }
@@ -132,6 +132,7 @@ public class DepthScript : MonoBehaviour
 
             //Convert RFloat into Grayscale Image between near and far clip area.
             ConvertFloatToGrayScale(m_DepthTextureFloat, m_DepthTextureBGRA);
+            m_DepthTextureBGRA = rotateTexture(m_DepthTextureBGRA, true);
             //Visualize near~far depth.
             m_grayDepthView.texture = m_DepthTextureBGRA;
 
@@ -284,6 +285,29 @@ public class DepthScript : MonoBehaviour
 
     }
 
+    Texture2D rotateTexture(Texture2D originalTexture, bool clockwise)
+    {
+        Color32[] original = originalTexture.GetPixels32();
+        Color32[] rotated = new Color32[original.Length];
+        int w = originalTexture.width;
+        int h = originalTexture.height;
 
+        int iRotated, iOriginal;
+
+        for (int j = 0; j < h; ++j)
+        {
+            for (int i = 0; i < w; ++i)
+            {
+                iRotated = (i + 1) * h - j - 1;
+                iOriginal = clockwise ? original.Length - 1 - (j * w + i) : j * w + i;
+                rotated[iRotated] = original[iOriginal];
+            }
+        }
+
+        Texture2D rotatedTexture = new Texture2D(h, w);
+        rotatedTexture.SetPixels32(rotated);
+        rotatedTexture.Apply();
+        return rotatedTexture;
+    }
 
 }
